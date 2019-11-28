@@ -1,5 +1,5 @@
 
-## EM Algorithm Derivation and Some Special Examples
+## EM Algorithm Derivation and Auxiliary function
 
 ### Introduction
 

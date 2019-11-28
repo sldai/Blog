@@ -155,4 +155,4 @@ The update rule of an auxiliary function is $x_{n+1}={\arg \max}_xQ(x,x_{n})$.
 
 A process of optimizing an auxiliary function is showed below. Hope it can help you understand the essence of EM.
 
-![img](https://raw.githubusercontent.com/sldai/online_img/master/auxi_visual.gif)
+![img](auxi_visual.gif)

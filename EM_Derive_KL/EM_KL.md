@@ -1,6 +1,6 @@
 ## EM algorithm Convergence Proof with KL Divergence
 
-In my previous post, I introduce the derivation of EM algorithm and convergence proof via defining its auxiliary function. Here I will introduce another method to prove the convergence of EM. 
+In my previous blog, I introduce the derivation of EM algorithm and convergence proof via defining its auxiliary function. Here I will introduce another method to prove the convergence of EM. 
 
 First let us denote $X, Z$ as the observed variable and hidden variable, and denote $D$ as collected iid samples, $\theta$ as the parameters.
 
@@ -35,10 +35,29 @@ H(\theta,\theta^n)&=-E_{Z|X;\theta^n}(\log P_{Z|X}(z|D;\theta))
 \end{aligned}
 $$
 where $KL[p||q]$ is the Kullback-Leibler divergence between $p$ and $q$, and $H[p]$ the entropy of $p$ itself. So $H(\theta,\theta^n) \geq 0, \log P_X(D;\theta) \geq H(\theta,\theta^n)$
-
-To prove 
+![img](https://raw.githubusercontent.com/sldai/Blog/master/EM_Derive_KL/EM_KL_lower_bound.png)
+To prove the convergence of EM, we need to prove:
 
 $$
-Q(\theta,\tilde{\theta})={\sum_{t=1}^{T}}{\sum_{i=0}^{1}}P(Y=i|W=w_t;\tilde{\theta})\log\frac{P(W=w_t,Y=i;\theta)}{P(Y=i|W=w_t;\tilde{\theta})}
+\begin{aligned}
+&\log P_X(D;\theta^{n+1}) \geq \log P_X(D;\theta^n)
+\\
+&\log P_X(D;\theta^{n+1}) - \log P_X(D;\theta^n)
+\\
+&=Q(\theta^{n+1},\theta^n)+H(\theta^{n+1},\theta^{n})-Q(\theta^{n},\theta^n)-H(\theta^{n},\theta^{n})
+\\
+&=Q(\theta^{n+1},\theta^n)-Q(\theta^{n},\theta^n)+KL[p_n||p_{n+1}]+H[p_n]-KL[p_n||p_n]-H[p_n]
+\\
+&=Q(\theta^{n+1},\theta^n)-Q(\theta^{n},\theta^n)+KL[p_n||p_{n+1}]
+\end{aligned}
 $$
+In M step we optimize $Q, Q(\theta^{n+1},\theta^n)\geq Q(\theta^{n},\theta^n)$, so $\log P_X(D;\theta^{n+1}) - \log P_X(D;\theta^n)$. The convergence of EM is proved, but note that there is no guarantee of convergence to global maximum.
+
+And since in the proof, we just increase Q function rather than maximize it. So in M step any step that increases it is sufficient, it is very useful when M-step is itself non-trivial: 
+\* e.g. if there is no closed-form solution one has to resort to numerical methods, like gradient ascent. 
+\* can be computationally intensive, lots of iterations per M-step
+\* in these cases, it is usually better to just perform a few iterations and move on to the next E-step
+\* no point in precisely optimizing M-step if everything is going to change when we compute the new E-step
+
+
 

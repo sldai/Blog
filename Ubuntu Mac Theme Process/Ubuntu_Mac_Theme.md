@@ -18,19 +18,19 @@ sudo apt-get install gnome-shell-extensions
 ```
 
 Then add extension for genome. Open the website for gnome extensions (https://extensions.gnome.org/).
-![extensionsite](gnome_extension.png)
+![extensionsite](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/gnome_extension.png)
 
 To add extensions, choose a extension and click on. You may need chrome extension recommended in this page installed.
-![clickon](click_on.png)
+![clickon](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/click_on.png)
 
 I recommend add following extensions:
 
 User Theme (must): allow user define theme in ~/.themes and ~/.icons folders.
-![floder](folder.png)
+![floder](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/folder.png)
 
 Dash to Dock: Customize you Dock.
 
-![dock](dock.png)
+![dock](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/dock.png)
 
 Removable Drive Menu: usb indicator.
 
@@ -42,7 +42,7 @@ open weather.
 
 GTK theme includes themes of your file manager and other system applications. Download mac theme zip from [McSierra Compact](https://www.gnome-look.org/p/1013741/), then extract it into ~/.themes folder. Then choose the application theme in tweak tool.
 
-![themefolder](set_app_theme.png)
+![themefolder](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/set_app_theme.png)
 
 -----------
 
@@ -66,7 +66,7 @@ It affect the boot graphical interface. Download [Grub-theme-vimix](https://www.
 sudo .\install
 ```
 
-![grub](gubtheme.jpg)
+![grub](https://raw.githubusercontent.com/sldai/Blog/master/Ubuntu%20Mac%20Theme%20Process/gubtheme.jpg)
 
 --------
 

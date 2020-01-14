@@ -59,5 +59,23 @@ And since in the proof, we just increase Q function rather than maximize it. So 
 \* in these cases, it is usually better to just perform a few iterations and move on to the next E-step
 \* no point in precisely optimizing M-step if everything is going to change when we compute the new E-step
 
+### Derive the Form of Discrete Variables
 
+In previous [part](/posts/EM_Algorithm_Derivation_and_Auxiliary_Function), I have derived the following form of Q function. 
+
+$$
+Q(\theta,\theta^n)={\sum_{t=1}^{T}}{\sum_{i=0}^{C}}P(Z=i|X=x_t;\theta^n) \log{P(X=x_t,Z=i;\theta)}
+$$
+
+Next I will show how to derive it from the Q function above. 
+
+$$
+E_{Z \sim P(z|D;\theta^n)}(\log P_{X,Z}(D,z;\theta))
+\\
+=E_{Z \sim P(z|D;\theta^n)}(\sum_{t=1}^{N}\log P_{X,Z}(x_t,z_t;\theta))
+\\
+=\sum_{t=1}^{N} E_{Z \sim P(z|D;\theta^n)}(\log P_{X,Z}(x_t,z_t;\theta))
+\\
+=\sum_{t=1}^{N} E_{Z \sim P(z_t|x_t;\theta^n)}(\log P_{X,Z}(x_t,z_t;\theta))
+$$
 
